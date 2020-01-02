@@ -1,31 +1,37 @@
-/*
-package com.example.demo;
+package com.example.demo.mybatisPlus;
 
+import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.generator.AutoGenerator;
+import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
+import com.baomidou.mybatisplus.generator.config.GlobalConfig;
+import com.baomidou.mybatisplus.generator.config.PackageConfig;
+import com.baomidou.mybatisplus.generator.config.StrategyConfig;
+import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import org.junit.jupiter.api.Test;
 
 public class TestMP {
 
-    private static String author ="KazuGin";//作者名称
-    private static String outputDir ="E:\\广州科苑\\课堂代码\\Y2T06\\mybatisplus02\\src\\main\\java";//生成的位置
+    private static String author ="赵君龙";//作者名称
+    private static String outputDir ="E:\\公司\\project\\study\\src\\main\\java";//生成的位置
     private static String driver ="com.mysql.cj.jdbc.Driver";//驱动，注意版本
     //连接路径,注意修改数据库名称
-    private static String url ="jdbc:mysql://localhost:3306/db_mybatisplus?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
-    private static String username ="root";//数据库用户名
-    private static String password ="root";//数据库密码
-    private static String tablePrefix ="tbl_";//数据库表的前缀，如tbl_user
+    private static String url ="jdbc:mysql://localhost:3306/demo?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false";
+    private static String username ="zjl";//数据库用户名
+    private static String password ="123456";//数据库密码
+    private static String tablePrefix ="sys_";//数据库表的前缀，如tbl_user
     private static String [] tables = {"tbl_employee","user"};	//生成的表
-    private static String parentPackage = "com.bdqn";//顶级包结构
+    private static String parentPackage = "com.example.demo";//顶级包结构
     private static String dao = "dao";//数据访问层包名称
     private static String service = "service";//业务逻辑层包名称
-    private static String entity = "entity";//实体层包名称
+    private static String entity = "domain";//实体层包名称
     private static String controller = "controller";//控制器层包名称
-    private static String mapperxml = "dao";//mapper映射文件包名称
+    private static String mapperxml = "mybatis";//mapper映射文件包名称
 
 
-    */
 /**
      * 代码生成    示例代码
-     *//*
+     */
 
     @Test
     public void  testGenerator() {
@@ -40,7 +46,7 @@ public class TestMP {
                 .setBaseColumnList(true);	//生成通用sql字段
 
         //2. 数据源配置
-        DataSourceConfig  dsConfig  = new DataSourceConfig();
+        DataSourceConfig dsConfig  = new DataSourceConfig();
         dsConfig.setDbType(DbType.MYSQL)  // 设置数据库类型
                 .setDriverName(driver)	//设置驱动
                 .setUrl(url)			//设置连接路径
@@ -50,7 +56,7 @@ public class TestMP {
         //3. 策略配置
         StrategyConfig stConfig = new StrategyConfig();
         stConfig.setCapitalMode(true) //全局大写命名
-                .setNaming(NamingStrategy.underline_to_camel) // 数据库表映射到实体的命名策略
+                .setNaming(NamingStrategy.underline_to_camel) // 数据库表映射到实体的命名策略    (设置了不会有下划线)
                 .setTablePrefix(tablePrefix) //表前缀
                 .setInclude(tables);  // 生成的表
 
@@ -64,7 +70,7 @@ public class TestMP {
                 .setXml(mapperxml);	//mapper映射文件
 
         //5. 整合配置
-        AutoGenerator  ag = new AutoGenerator();
+        AutoGenerator ag = new AutoGenerator();
         ag.setGlobalConfig(config)
                 .setDataSource(dsConfig)
                 .setStrategy(stConfig)
@@ -73,4 +79,3 @@ public class TestMP {
         ag.execute();
     }
 }
-*/

@@ -45,13 +45,14 @@
         </dependency>
 
         <!--mybatis-plus 自动生成代码-->
+        <!--代码生成器核心-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
             <version>3.3.0</version>
         </dependency>
 
-        <!--自动生成代码需要添加模版 默认版本elocity-->
+        <!--自动生成代码需要添加模版 默认版本velocity-->
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
